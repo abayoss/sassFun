@@ -1,12 +1,13 @@
-/*
-Colors : 
-    primary : 
-        $color-primary: #55c57a;
-        $color-primary-light: #7ed56f;
-        $color-primary-dark: #28b485;
-    warning : 
-    danger : 
-*/
+
+// Colors : 
+    // base : 
+    $color-white: white;
+    // primary & theme based: 
+    $color-primary: #55c57a;
+    $color-primary-light: #7ed56f;
+    $color-primary-dark: #28b485;
+    // warning : 
+    // danger : 
 
 /* reset initializer */
 * {
@@ -24,35 +25,39 @@ body {
     line-height: 1.7;
     color: #777;
     /* padding arround the page */
-    padding: 30px ;
+    padding: 30px;
 }
 
 /* sections */
 .header {
     min-height: 80vh;
-    background-image: linear-gradient(to bottom right,#55c57a98, #28b4858c) ,url(../img/hero.jpg);
+    background-image: linear-gradient(
+            to bottom right,
+            rgba($color-primary, 0.6),
+            rgba($color-primary-dark, 0.6)
+        ),
+        url(../assets/img/hero.jpg);
     background-size: cover;
     background-position: top;
     position: relative;
-}
-
-.logo-box {
-    /* positioning */
-    position: absolute;
-    top: 40px;
-    left: 40px;
-}
-.logo {
-    height: 35px;
-}
-.text-box {
-    /* positioning */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* centering btn */
-    text-align: center;
+    &__logo-box {
+        /* positioning */
+        position: absolute;
+        top: 40px;
+        left: 40px;
+    }
+    &__logo {
+        height: 35px;
+    }
+    &__text-box {
+        /* positioning */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* centering btn */
+        text-align: center;
+    }
 }
 .heading-primary {
     /* text */
@@ -61,35 +66,39 @@ body {
     letter-spacing: 8px;
     margin-bottom: 20px;
 }
+
 /* button */
-.btn:link, .btn:visited {
-    text-decoration: none;
-    text-transform: uppercase;
-    display: inline-block;
-    padding: 16px 40px;
-    border-radius: 100px;
-    transition: all .2s;
-}
-.btn:hover {
-    transform: translateY(-3px);
-}
-.btn:active {
-    transform: translateY(-1px);
-}
-.btn-white {
-    background-color: white;
-    color: black;
-    animation: moveUp .3s ease-in-out 1s;
-    /* hide the btn before animation delay */
-    animation-fill-mode: backwards;
+.btn {
+    &:link,
+    &:visited {
+        text-decoration: none;
+        text-transform: uppercase;
+        display: inline-block;
+        padding: 16px 40px;
+        border-radius: 100px;
+        transition: all 0.2s;
+    }
+    &:hover {
+        transform: translateY(-3px);
+    }
+    &:active {
+        transform: translateY(-1px);
+    }
+    &--white {
+        background-color: $color-white;
+        color: black;
+        animation: moveUp 0.3s ease-in-out 1s;
+        /* hide the btn before animation delay */
+        animation-fill-mode: backwards;
+    }
 }
 
 @keyframes moveUp {
     0% {
         opacity: 0;
-        transform: translateY(20px);    
+        transform: translateY(20px);
     }
-    100% { 
+    100% {
         opacity: 1;
         transform: translateY(0px);
     }
