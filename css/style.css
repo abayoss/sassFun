@@ -1,11 +1,11 @@
 /*
 Colors : 
-primary : 
-$color-primary: #55c57a;
-$color-primary-light: #7ed56f;
-$color-primary-dark: #28b485;
-warning : 
-danger : 
+    primary : 
+        $color-primary: #55c57a;
+        $color-primary-light: #7ed56f;
+        $color-primary-dark: #28b485;
+    warning : 
+    danger : 
 */
 
 /* reset initializer */
@@ -79,4 +79,18 @@ body {
 .btn-white {
     background-color: white;
     color: black;
+    animation: moveUp .3s ease-in-out 1s;
+    /* hide the btn before animation delay */
+    animation-fill-mode: backwards;
+}
+
+@keyframes moveUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);    
+    }
+    100% { 
+        opacity: 1;
+        transform: translateY(0px);
+    }
 }
