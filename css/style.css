@@ -4,18 +4,29 @@
   padding: 0;
   box-sizing: border-box; }
 
-/* reset & typography*/
+@keyframes moveUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0px); } }
+
 body {
   /* typography */
   font-family: lato, sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.7;
-  color: #777;
-  /* padding arround the page */
-  padding: 30px; }
+  color: #777; }
 
-/* sections */
+.heading-primary {
+  /* text */
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  margin-bottom: 20px; }
+
 .header {
   min-height: 80vh;
   background-image: linear-gradient(to bottom right, rgba(85, 197, 122, 0.6), rgba(40, 180, 133, 0.6)), url(../assets/img/hero.jpg);
@@ -38,14 +49,6 @@ body {
     /* centering btn */
     text-align: center; }
 
-.heading-primary {
-  /* text */
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 8px;
-  margin-bottom: 20px; }
-
-/* button */
 .btn:link, .btn:visited {
   text-decoration: none;
   text-transform: uppercase;
@@ -67,10 +70,6 @@ body {
   /* hide the btn before animation delay */
   animation-fill-mode: backwards; }
 
-@keyframes moveUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px); }
-  100% {
-    opacity: 1;
-    transform: translateY(0px); } }
+body {
+  /* padding arround the page */
+  padding: 30px; }
